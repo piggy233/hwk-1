@@ -1,1 +1,1 @@
-alert tcp $EXTERNAL_NET any -> $HTTP_PORTS (msg:"TEST ALERT";)
+alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS 1080 (flags:URG;content:"hostip";offset:10;length:10;\msg:"TEST ALERT";)
